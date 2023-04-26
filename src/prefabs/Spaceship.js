@@ -25,9 +25,8 @@ class Spaceship extends Phaser.GameObjects.Sprite
     }
 }
 
-// this is for 
 /* 
-Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15)
+this is for: Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15)
 */ 
 class SpaceshipFast extends Phaser.GameObjects.Sprite
 {

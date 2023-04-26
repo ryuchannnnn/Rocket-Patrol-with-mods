@@ -1,18 +1,20 @@
 // Danny Chan
 // Rocket Patrol 2 The Sequel
-// time I took: 
+// time I took(total): 
 /*
     Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15) time: 5 min to draw ship, testing took about 10 minutes: total 15 minutes 
 
 */
-// mods I chose 
+
+
+// mods I chose(done in order)
 /*
     Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15) and my artwork was drawn on piskel because aseprite costs money
 */
 
 // citations:
 /*
-
+    
 */
 
 let config = 
