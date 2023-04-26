@@ -10,6 +10,7 @@ class Play extends Phaser.Scene
         // load images/tile sprites
         this.load.image('rocket', './assets/rocket.png');
         this.load.image('spaceship', './assets/spaceship.png');
+        this.load.image('fastSpaceship', './assets/fastSpaceship.png');
         this.load.image('starfield', './assets/starfield.png');
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame:9})
 
@@ -33,9 +34,15 @@ class Play extends Phaser.Scene
         this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0.5,0);
 
         // add spaceship(x3)
-        this.ship01 = new Spaceship(this, game.config.width + borderUISize * 6, borderUISize * 4, 'spaceship', 0,30).setOrigin(0,0);
-        this.ship02 = new Spaceship(this, game.config.width + borderUISize * 3, borderUISize * 5 + borderPadding * 2, 'spaceship', 0,20).setOrigin(0,0);
-        this.ship03 = new Spaceship(this, game.config.width, borderUISize * 6 + borderPadding * 4, 'spaceship', 0,10).setOrigin(0,0);
+        this.ship01 = new Spaceship(this, game.config.width + borderUISize * 6, borderUISize * 4, 'spaceship', 0, 30).setOrigin(0,0);
+        this.ship02 = new Spaceship(this, game.config.width + borderUISize * 3, borderUISize * 5 + borderPadding * 2, 'spaceship', 0, 20).setOrigin(0,0);
+        this.ship03 = new Spaceship(this, game.config.width, borderUISize * 6 + borderPadding * 4, 'spaceship', 0, 10).setOrigin(0,0);
+
+        // this is for 
+        /* 
+        Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15)
+        */ 
+        this.fastShip = new SpaceshipFast(this, game.config.width + borderUISize * 6, borderUISize * 10 + borderPadding * 2, 'fastSpaceship', 0, 40).setOrigin(0,0);
 
         // define keys
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
@@ -101,6 +108,7 @@ class Play extends Phaser.Scene
             this.ship01.update();
             this.ship02.update();
             this.ship03.update();
+            this.fastShip.update();
         }
 
         // check collisions 
@@ -118,6 +126,15 @@ class Play extends Phaser.Scene
         {
             this.p1Rocket.reset();
             this.shipExplode(this.ship01);
+        }
+        // this is for 
+        /* 
+            Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15)  
+        */ 
+        if(this.checkCollision(this.p1Rocket,this.fastShip))
+        {
+            this.p1Rocket.reset();
+            this.shipExplode(this.fastShip);
         }
     }
 
