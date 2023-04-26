@@ -9,12 +9,13 @@
 
 // mods I chose(done in order)
 /*
-    Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15) and my artwork was drawn on piskel because aseprite costs money
+    Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15): My artwork was drawn on piskel because aseprite costs money
+    I was able to implement this by making a new Spaceship type, but just making it faster by a little bit.
 */
 
 // citations:
 /*
-    
+
 */
 
 let config = 
