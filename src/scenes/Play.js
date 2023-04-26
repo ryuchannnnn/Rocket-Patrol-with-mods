@@ -12,8 +12,8 @@ class Play extends Phaser.Scene
         this.load.image('spaceship', './assets/spaceship.png');
         this.load.image('fastSpaceship', './assets/fastSpaceship.png');
         this.load.image('starfield', './assets/starfield.png');
-        this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame:9})
-
+        this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame:9});
+        this.load.audio("music", './assets/playSceneAudio.mp3');
     }
 
     create()
@@ -84,6 +84,20 @@ class Play extends Phaser.Scene
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or <- for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
+
+        // Add your own (copyright-free) background music to the Play scene (please be mindful of the volume) (5)
+        // https://www.youtube.com/watch?v=COncYQLGJS8&ab_channel=LuisZuno
+        this.music = this.sound.add("music");
+        var musicConfig = {
+            mute: false,
+            volume: 0.12,
+            rate: 1,
+            detune: 0, 
+            seek: 0,
+            loop: false,
+            delay:0
+        }
+        this.music.play(musicConfig);
     }
 
     update()
