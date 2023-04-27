@@ -31,7 +31,7 @@
     Explanation: 
     I got the moon artwork from opengameart 
     https://opengameart.org/content/vector-moon-0
-    I used piskel and made a fully black background to represent space. **3
+    I used piskel and made a fully black background to represent space. **
     
 */
 
@@ -42,7 +42,7 @@
     I followed this guide for adding copyright free background music
     https://www.youtube.com/watch?v=COncYQLGJS8&ab_channel=LuisZuno 
 
-    **3 
+    **2
     https://opengameart.org/content/vector-moon-0
 
 

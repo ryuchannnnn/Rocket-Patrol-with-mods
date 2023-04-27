@@ -5,6 +5,7 @@ class Play extends Phaser.Scene
         super("playScene");
     }
 
+
     preload()
     {
         // load images/tile sprites
@@ -113,8 +114,8 @@ class Play extends Phaser.Scene
             this.scene.start("menuScene");
         }
 
-
         this.starfield.tilePositionX -=4;
+
         if(!this.gameOver)
         {
             this.p1Rocket.update();
