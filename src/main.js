@@ -4,6 +4,7 @@
 /*
     Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15) time: 5 min to draw ship, testing took about 10 minutes: total 15 minutes 
     Add your own (copyright-free) background music to the Play scene (please be mindful of the volume) (5)                                                                : total 30 minutes
+    Create a new scrolling tile sprite for the background (5)                                                                                                             : total 10 minutes
 
 */
 
@@ -24,14 +25,25 @@
     I chose my Background music via https://www.FesliyanStudios.com, their audio is permitted for video games as long as I do not upload to youtube, and citing just requires to put their website.
     I am not gaining ANY profit off this but I will still cite where I got the audio from. (as well as their policy) https://www.fesliyanstudios.com/policy
     see citations for how I implemented this **1
+
+    3.
+    Create a new scrolling tile sprite for the background (5)
+    Explanation: 
+    I got the moon artwork from opengameart 
+    https://opengameart.org/content/vector-moon-0
+    I used piskel and made a fully black background to represent space. **3
+    
 */
 
 // citations:
 /*
     **1 
-    I used this for audio: Background music via https://www.FesliyanStudios.com
+    I used this for audio: https://www.fesliyanstudios.com/royalty-free-music/download/arcade-kid/618 Background music via https://www.FesliyanStudios.com
     I followed this guide for adding copyright free background music
     https://www.youtube.com/watch?v=COncYQLGJS8&ab_channel=LuisZuno 
+
+    **3 
+    https://opengameart.org/content/vector-moon-0
 
 
 */
