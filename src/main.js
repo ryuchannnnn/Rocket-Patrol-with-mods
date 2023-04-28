@@ -9,7 +9,6 @@
 
 */
 
-
 // mods I chose(done in order)
 /*
     1.
@@ -36,6 +35,8 @@
 
     4. 
     Implement the 'FIRE' UI text from the original game (5) **3 
+
+    5.
     
 */
 
@@ -51,7 +52,6 @@
 
     **3
     https://www.youtube.com/watch?v=7gGjBkKM_8M&ab_channel=MitchellHudson
-
 
 
 */
