@@ -106,6 +106,8 @@ class Play extends Phaser.Scene
         // Implement the 'FIRE' UI text from the original game (5)
         this.fireUIText = this.add.text(300, borderUISize + borderPadding * 2,'FIRE', {fontFamily: 'Courier', fontSize: '28px', color: '#843605'}).setOrigin(0,0);
         this.fireUIText.visible = false;
+
+        this.rndInteger = Phaser.Math.Between(1, 4);
     }
 
     update()
@@ -194,6 +196,31 @@ class Play extends Phaser.Scene
         // score add and repaint
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;
-        this.sound.play('sfx_explosion');
+        if(this.rndInteger == 1)
+        {
+            this.sound.play('sfx_explosion');
+            this.rndInteger = Phaser.Math.Between(1, 4);
+        }
+        else if(this.rndInteger == 2)
+        {
+            this.sound.play('sfx_explosion2');
+            this.rndInteger = Phaser.Math.Between(1, 4);
+        }
+        else if(this.rndInteger == 3)
+        {
+            this.sound.play('sfx_explosion3');
+            this.rndInteger = Phaser.Math.Between(1, 4);
+        }
+        else if(this.rndInteger == 4)
+        {
+            this.sound.play('sfx_explosion4');
+            this.rndInteger = Phaser.Math.Between(1, 4);
+        }
+        else
+        {
+            this.sound.play('sfx_explosion');
+            this.rndInteger = Phaser.Math.Between(1, 4);
+        }
+
     }
 }
