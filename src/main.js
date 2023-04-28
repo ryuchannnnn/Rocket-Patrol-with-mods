@@ -4,7 +4,8 @@
 /*
     Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15) time: 5 min to draw ship, testing took about 10 minutes: total 15 minutes 
     Add your own (copyright-free) background music to the Play scene (please be mindful of the volume) (5)                                                                : total 30 minutes
-    Create a new scrolling tile sprite for the background (5)                                                                                                             : total 10 minutes
+    Create a new scrolling tile sprite for the background (5)  : total 10 minutes
+    Implement the 'FIRE' UI text from the original game (5): total 10 minutes 
 
 */
 
@@ -31,7 +32,10 @@
     Explanation: 
     I got the moon artwork from opengameart 
     https://opengameart.org/content/vector-moon-0
-    I used piskel and made a fully black background to represent space. **
+    I used piskel and made a fully black background to represent space. **2
+
+    4. 
+    Implement the 'FIRE' UI text from the original game (5) **3 
     
 */
 
@@ -44,6 +48,10 @@
 
     **2
     https://opengameart.org/content/vector-moon-0
+
+    **3
+    https://www.youtube.com/watch?v=7gGjBkKM_8M&ab_channel=MitchellHudson
+
 
 
 */

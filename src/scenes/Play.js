@@ -3,6 +3,7 @@ class Play extends Phaser.Scene
     constructor()
     {
         super("playScene");
+
     }
 
 
@@ -100,6 +101,11 @@ class Play extends Phaser.Scene
             delay:0
         }
         this.music.play(musicConfig);
+
+        // fire text 
+        // Implement the 'FIRE' UI text from the original game (5)
+        this.fireUIText = this.add.text(300, borderUISize + borderPadding * 2,'FIRE', {fontFamily: 'Courier', fontSize: '28px', color: '#843605'}).setOrigin(0,0);
+        this.fireUIText.visible = false;
     }
 
     update()
@@ -124,6 +130,15 @@ class Play extends Phaser.Scene
             this.ship02.update();
             this.ship03.update();
             this.fastShip.update();
+        }
+
+        // Implement the 'FIRE' UI text from the original game (5)
+        if(this.p1Rocket.isFiring)
+        {
+            this.fireUIText.visible = true;
+         
+        } else {
+            this.fireUIText.visible = false;
         }
 
         // check collisions 
