@@ -2,10 +2,12 @@
 // Rocket Patrol 2 The Sequel
 // time I took(total): 
 /*
-    Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15) time: 5 min to draw ship, testing took about 10 minutes: total 15 minutes 
-    Add your own (copyright-free) background music to the Play scene (please be mindful of the volume) (5)                                                                : total 30 minutes
-    Create a new scrolling tile sprite for the background (5)  : total 10 minutes
-    Implement the 'FIRE' UI text from the original game (5): total 10 minutes 
+    15 minutes 
+    30 minutes
+    10 minutes
+    10 minutes 
+    15 minutes 
+    10 minutes
 
 */
 
@@ -37,13 +39,23 @@
     Implement the 'FIRE' UI text from the original game (5) **3 
 
     5.
-    
+    Create 4 new explosion sound effects and randomize which one plays on impact (10)
+
+    6. 
+    Create a new title screen (e.g., new artwork, typography, layout) (10) **4
+
+    7.
+    Display the time remaining (in seconds) on the screen (10) **5
+
+    8.
+    Implement a new timing/scoring mechanism that adds time to the clock for successful hits (15)
 */
 
 // citations:
 /*
     **1 
-    I used this for audio: https://www.fesliyanstudios.com/royalty-free-music/download/arcade-kid/618 Background music via https://www.FesliyanStudios.com
+    I used this for audio: https://www.fesliyanstudios.com/royalty-free-music/download/arcade-kid/618 
+    Background music via https://www.FesliyanStudios.com
     I followed this guide for adding copyright free background music
     https://www.youtube.com/watch?v=COncYQLGJS8&ab_channel=LuisZuno 
 
@@ -52,6 +64,12 @@
 
     **3
     https://www.youtube.com/watch?v=7gGjBkKM_8M&ab_channel=MitchellHudson
+
+    **4 
+    https://opengameart.org/content/space-rocket-2d
+
+    **5
+    https://phaser.discourse.group/t/how-to-make-a-timer-that-displays-the-games-run-time/5175/4
 
 
 */

@@ -104,10 +104,16 @@ class Play extends Phaser.Scene
 
         // fire text 
         // Implement the 'FIRE' UI text from the original game (5)
-        this.fireUIText = this.add.text(300, borderUISize + borderPadding * 2,'FIRE', {fontFamily: 'Courier', fontSize: '28px', color: '#843605'}).setOrigin(0,0);
+        this.fireUIText = this.add.text(300, borderUISize + borderPadding * 2, 'FIRE', {fontFamily: 'Courier', fontSize: '28px', color: '#843605'}).setOrigin(0,0);
         this.fireUIText.visible = false;
 
+        // this is for the explosion randomizing sound 
         this.rndInteger = Phaser.Math.Between(1, 4);
+
+        this.startTime = this.game.getTime();
+
+        // Display the time remaining (in seconds) on the screen (10)
+        this.showTimer = this.add.text(200, borderUISize + borderPadding * 2, game.settings.gameTimer, {fontFamily: 'Courier', fontSize: '28px', color: '#843605'}).setOrigin(0,0);
     }
 
     update()
@@ -167,6 +173,9 @@ class Play extends Phaser.Scene
             this.p1Rocket.reset();
             this.shipExplode(this.fastShip);
         }
+
+        //this is for displaying timer
+        this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
     }
 
     checkCollision(rocket,ship)
@@ -221,6 +230,5 @@ class Play extends Phaser.Scene
             this.sound.play('sfx_explosion');
             this.rndInteger = Phaser.Math.Between(1, 4);
         }
-
     }
 }
