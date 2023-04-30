@@ -47,8 +47,7 @@
     7.
     Display the time remaining (in seconds) on the screen (10) **5
 
-    8.
-    Implement a new timing/scoring mechanism that adds time to the clock for successful hits (15)
+    
 */
 
 // citations:

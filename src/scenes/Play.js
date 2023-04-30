@@ -6,7 +6,6 @@ class Play extends Phaser.Scene
 
     }
 
-
     preload()
     {
         // load images/tile sprites
@@ -154,28 +153,34 @@ class Play extends Phaser.Scene
         {
             this.p1Rocket.reset();
             this.shipExplode(this.ship03);
+            this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
         }
-        if(this.checkCollision(this.p1Rocket,this.ship02))
+        else if(this.checkCollision(this.p1Rocket,this.ship02))
         {
             this.p1Rocket.reset();
             this.shipExplode(this.ship02);
+            this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
         }
-        if(this.checkCollision(this.p1Rocket,this.ship01))
+        else if(this.checkCollision(this.p1Rocket,this.ship01))
         {
             this.p1Rocket.reset();
             this.shipExplode(this.ship01);
+            this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
         }
         /* 
             this is for: Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15)  
         */ 
-        if(this.checkCollision(this.p1Rocket,this.fastShip))
+        else if(this.checkCollision(this.p1Rocket,this.fastShip))
         {
             this.p1Rocket.reset();
             this.shipExplode(this.fastShip);
+            this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
         }
-
-        //this is for displaying timer
-        this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
+        else
+        {
+            //this is for displaying timer
+            this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
+        }
     }
 
     checkCollision(rocket,ship)
