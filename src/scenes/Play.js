@@ -15,6 +15,7 @@ class Play extends Phaser.Scene
         this.load.image('newStarfield', './assets/newStarfield.png');
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame:9});
         this.load.audio("music", './assets/playSceneAudio.mp3');
+        this.load.image('star', './assets/star3.png');
     }
 
     create()
@@ -206,6 +207,11 @@ class Play extends Phaser.Scene
             ship.reset();
             ship.alpha = 1;
             boom.destroy();
+        });
+        this.add.particles(ship.x, ship.y, 'star', {
+            speed: 100,
+            lifespan: 30,
+            gravityY: 200
         });
         // score add and repaint
         this.p1Score += ship.points;
