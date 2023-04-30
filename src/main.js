@@ -8,7 +8,7 @@
     10 minutes 
     15 minutes 
     10 minutes
-
+    20 minutes 
 */
 
 // mods I chose(done in order)
@@ -47,7 +47,9 @@
     7.
     Display the time remaining (in seconds) on the screen (10) **5
 
-    
+    8. 
+    Use Phaser's particle emitter to create a particle explosion when the rocket hits the spaceship (15) **6
+
 */
 
 // citations:
@@ -69,6 +71,9 @@
 
     **5
     https://phaser.discourse.group/t/how-to-make-a-timer-that-displays-the-games-run-time/5175/4
+
+    **6
+    https://labs.phaser.io/view.html?src=src/game%20objects/particle%20emitter/direct%20value.js
 
 
 */
