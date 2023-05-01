@@ -2,17 +2,7 @@
 // Rocket Patrol 2 The Sequel
 // time I took(total): 
 /*
-    15 minutes 
-    30 minutes
-    10 minutes
-    10 minutes 
-    15 minutes 
-    10 minutes
-    20 minutes 
-    20 minutes
-    20 minutes
-    20 minutes 
-    5 minutes 
+    15 hours
 */
 
 // mods I chose(done in order)
