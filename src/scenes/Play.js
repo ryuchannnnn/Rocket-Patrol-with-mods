@@ -60,7 +60,6 @@ class Play extends Phaser.Scene
         });
 
         this.p1Score = 0;
-        this.globalHighScore = 0;
         // display score 
         let scoreConfig = 
         {
@@ -75,10 +74,24 @@ class Play extends Phaser.Scene
             },
             fixedWidth:100
         }
+
+        // display highScore 
+        let highScoreConfig = 
+        {   
+            fontFamily: 'Courier',
+            fontSize: '20px',
+            backgroundColor: '#F3B141',
+            color: '#843605',
+            align: 'right',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth:180
+        }
         this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding * 2, this.p1Score, scoreConfig);
 
-        this.displayHighScore = this.add.text(400,50, "High Score : " + this.globalHighScore, {fontFamily: 'Courier', fontSize: '18px', color: '#843605'}).setOrigin(0,0);
-
+        this.displayHighScore = this.add.text(400,50, "High Score: " + highScore, highScoreConfig);
         // game over flag
         this.gameOver = false;
 
@@ -107,7 +120,7 @@ class Play extends Phaser.Scene
 
         // fire text 
         // Implement the 'FIRE' UI text from the original game (5)
-        this.fireUIText = this.add.text(300, borderUISize + borderPadding * 2, 'FIRE', {fontFamily: 'Courier', fontSize: '28px', color: '#843605'}).setOrigin(0,0);
+        this.fireUIText = this.add.text(350, borderUISize + borderPadding * 2, 'FIRE', {fontFamily: 'Courier', fontSize: '14px', color: '#843605'}).setOrigin(0,0);
         this.fireUIText.visible = false;
 
         // this is for the explosion randomizing sound 
@@ -122,9 +135,12 @@ class Play extends Phaser.Scene
         // check key input for restart
         if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyR))
         {
+            if(this.p1Score > highScore)
+            {
+                highScore = this.p1Score;
+                this.displayHighScore.text = highScore;
+            }
             this.scene.restart();
-            this.setHighScore();
-            console.log("set High SCore");
         }
 
         if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT))
@@ -183,10 +199,10 @@ class Play extends Phaser.Scene
         else
         {
             //this is for displaying timer
-            this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
+            this.showTimer.setText("Timer: " + (Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds())));
         }
 
-        const pointer = this.input.activePointer;
+        localStorage.setItem(this.globalHighScore,this.p1Score);
     }
 
     checkCollision(rocket,ship)
@@ -246,14 +262,6 @@ class Play extends Phaser.Scene
         {
             this.sound.play('sfx_explosion');
             this.rndInteger = Phaser.Math.Between(1, 4);
-        }
-    }
-
-    setHighScore()
-    {
-        if(this.p1Score > localStorage.getItem(this.globalHighScore))
-        {
-            localStorage.setItem(this.globalHighScore, this.p1Score);
         }
     }
 }
