@@ -128,7 +128,7 @@ class Play extends Phaser.Scene
         this.rndInteger = Phaser.Math.Between(1, 4);
 
         // Display the time remaining (in seconds) on the screen (10)
-        this.showTimer = this.add.text(200, borderUISize + borderPadding * 2, game.settings.gameTimer, {fontFamily: 'Courier', fontSize: '28px', color: '#843605'}).setOrigin(0,0);
+        this.showTimer = this.add.text(200, borderUISize + borderPadding * 2, game.settings.gameTimer, {fontFamily: 'Courier', fontSize: '20px', color: '#843605'}).setOrigin(0,0);
     }
 
     update()
