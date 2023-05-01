@@ -91,6 +91,7 @@ class Play extends Phaser.Scene
         }
         this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding * 2, this.p1Score, scoreConfig);
 
+        // Track a high score that persists across scenes and display it in the UI (5)
         this.displayHighScore = this.add.text(400,50, "High Score: " + highScore, highScoreConfig);
         // game over flag
         this.gameOver = false;
@@ -135,6 +136,7 @@ class Play extends Phaser.Scene
         // check key input for restart
         if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyR))
         {
+            // Track a high score that persists across scenes and display it in the UI (5)
             if(this.p1Score > highScore)
             {
                 highScore = this.p1Score;
@@ -173,19 +175,19 @@ class Play extends Phaser.Scene
         {
             this.p1Rocket.reset();
             this.shipExplode(this.ship03);
-            this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
+            this.showTimer.setText("Timer: " + (Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds())));
         }
         else if(this.checkCollision(this.p1Rocket,this.ship02))
         {
             this.p1Rocket.reset();
             this.shipExplode(this.ship02);
-            this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
+            this.showTimer.setText("Timer: " + (Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds())));
         }
         else if(this.checkCollision(this.p1Rocket,this.ship01))
         {
             this.p1Rocket.reset();
             this.shipExplode(this.ship01);
-            this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
+            this.showTimer.setText("Timer: " + (Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds())));
         }
         /* 
             this is for: Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15)  
@@ -194,15 +196,13 @@ class Play extends Phaser.Scene
         {
             this.p1Rocket.reset();
             this.shipExplode(this.fastShip);
-            this.showTimer.setText(Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds()));
+            this.showTimer.setText("Timer: " + (Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds())));
         }
         else
         {
             //this is for displaying timer
             this.showTimer.setText("Timer: " + (Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds())));
         }
-
-        localStorage.setItem(this.globalHighScore,this.p1Score);
     }
 
     checkCollision(rocket,ship)
