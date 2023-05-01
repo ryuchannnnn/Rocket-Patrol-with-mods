@@ -36,21 +36,22 @@ class Play extends Phaser.Scene
         this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0.5,0);
 
         // add spaceship(x3)
-        this.ship01 = new Spaceship(this, game.config.width + borderUISize * 6, borderUISize * 4, 'spaceship', 0, 30).setOrigin(0,0);
-        this.ship02 = new Spaceship(this, game.config.width + borderUISize * 3, borderUISize * 5 + borderPadding * 2, 'spaceship', 0, 20).setOrigin(0,0);
-        this.ship03 = new Spaceship(this, game.config.width, borderUISize * 6 + borderPadding * 4, 'spaceship', 0, 10).setOrigin(0,0);
+        this.ship01 = new Spaceship(this, game.config.width + borderUISize * 6, borderUISize * 10 + borderPadding * 2, 'spaceship', 0, 40).setOrigin(0,0);
+        this.ship02 = new Spaceship(this, game.config.width + borderUISize * 3, borderUISize * 5 + borderPadding * 2, 'spaceship', 0, 30).setOrigin(0,0);
+        this.ship03 = new Spaceship(this, game.config.width, borderUISize * 6 + borderPadding * 4, 'spaceship', 0, 20).setOrigin(0,0);
 
         /* 
         this is for  Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15)
         */ 
-        this.fastShip = new SpaceshipFast(this, game.config.width + borderUISize * 6, borderUISize * 10 + borderPadding * 2, 'fastSpaceship', 0, 40).setOrigin(0,0);
+        this.fastShip = new SpaceshipFast(this, game.config.width + borderUISize * 6, borderUISize * 4, 'fastSpaceship', 0, 10).setOrigin(0,0);
+
+        this, game.config.width + borderUISize * 6, borderUISize * 10 + borderPadding * 2
 
         // define keys
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-        
         
         // animation config
         this.anims.create({
@@ -129,6 +130,9 @@ class Play extends Phaser.Scene
 
         // Display the time remaining (in seconds) on the screen (10)
         this.showTimer = this.add.text(200, borderUISize + borderPadding * 2, game.settings.gameTimer, {fontFamily: 'Courier', fontSize: '20px', color: '#843605'}).setOrigin(0,0);
+    
+        //Implement the speed increase that happens after 30 seconds in the original game (5)
+        this.minusThirtySeconds;
     }
 
     update()
@@ -202,6 +206,20 @@ class Play extends Phaser.Scene
         {
             //this is for displaying timer
             this.showTimer.setText("Timer: " + (Math.round(0.001 * game.settings.gameTimer - this.clock.getElapsedSeconds())));
+        }
+
+        // Implement the speed increase that happens after 30 seconds in the original game (5)
+        this.minusThirtySeconds = game.settings.gameTimer - 30000; //30 seconds 
+        this.remaining = this.clock.getRemaining(); // < 45 sec
+        console.log(this.minusThirtySeconds);
+        console.log(this.remaining);
+
+        if(this.minusThirtySeconds > this.remaining)
+        {
+            this.ship01.moveSpeed = game.settings.spaceshipSpeed + 5;
+            this.ship02.moveSpeed = game.settings.spaceshipSpeed + 5;
+            this.ship03.moveSpeed = game.settings.spaceshipSpeed + 5;
+            this.fastShip.moveSpeed = game.settings.spaceshipSpeed + 5;
         }
     }
 
