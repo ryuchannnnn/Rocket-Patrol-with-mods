@@ -9,6 +9,7 @@
     15 minutes 
     10 minutes
     20 minutes 
+    20 minutes 
 */
 
 // mods I chose(done in order)
@@ -50,7 +51,8 @@
     8. 
     Use Phaser's particle emitter to create a particle explosion when the rocket hits the spaceship (15) **6
 
-    9.
+    9. 
+    Track a high score that persists across scenes and display it in the UI (5) **7
     
 
 */
@@ -78,6 +80,9 @@
     **6
     https://labs.phaser.io/view.html?src=src/game%20objects/particle%20emitter/direct%20value.js
 
+    **7
+    I got help from a classmate who pointed me in the right direction. 
+
 
 */
 
@@ -97,3 +102,7 @@ let keyF,keyR,keyLEFT, keyRIGHT;
 // set UI sizes 
 let borderUISize = game.config.height/15;
 let borderPadding = borderUISize / 3;
+
+
+// global high score 
+let highScore = 0;
