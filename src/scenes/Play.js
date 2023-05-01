@@ -211,8 +211,6 @@ class Play extends Phaser.Scene
         // Implement the speed increase that happens after 30 seconds in the original game (5)
         this.minusThirtySeconds = game.settings.gameTimer - 30000; //30 seconds 
         this.remaining = this.clock.getRemaining(); // < 45 sec
-        console.log(this.minusThirtySeconds);
-        console.log(this.remaining);
 
         if(this.minusThirtySeconds > this.remaining)
         {
