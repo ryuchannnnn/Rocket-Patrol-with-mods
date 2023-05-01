@@ -9,7 +9,10 @@
     15 minutes 
     10 minutes
     20 minutes 
+    20 minutes
+    20 minutes
     20 minutes 
+    5 minutes 
 */
 
 // mods I chose(done in order)
@@ -54,6 +57,11 @@
     9. 
     Track a high score that persists across scenes and display it in the UI (5) **7
     
+    10.
+    Implement the speed increase that happens after 30 seconds in the original game (5)
+
+    11.
+    Allow the player to control the Rocket after it's fired (5)
 
 */
 
@@ -79,10 +87,6 @@
 
     **6
     https://labs.phaser.io/view.html?src=src/game%20objects/particle%20emitter/direct%20value.js
-
-    **7
-    I got help from a classmate who pointed me in the right direction. 
-
 
 */
 
