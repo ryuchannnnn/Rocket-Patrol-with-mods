@@ -45,13 +45,16 @@
     Use Phaser's particle emitter to create a particle explosion when the rocket hits the spaceship (15) **6
 
     9. 
-    Track a high score that persists across scenes and display it in the UI (5) **7
+    Track a high score that persists across scenes and display it in the UI (5) 
     
     10.
     Implement the speed increase that happens after 30 seconds in the original game (5)
 
     11.
     Allow the player to control the Rocket after it's fired (5)
+
+    12.
+    Implement parallax scrolling for the background (10) **7
 
 */
 
@@ -77,6 +80,9 @@
 
     **6
     https://labs.phaser.io/view.html?src=src/game%20objects/particle%20emitter/direct%20value.js
+
+    **7
+    https://opengameart.org/content/pixel-art-2d-asteroid-pack
 
 */
 

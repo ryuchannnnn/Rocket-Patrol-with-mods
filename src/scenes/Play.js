@@ -16,12 +16,14 @@ class Play extends Phaser.Scene
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight:32, startFrame:0, endFrame:9});
         this.load.audio("music", './assets/playSceneAudio.mp3');
         this.load.image('star', './assets/star3.png');
+        this.load.image('asteroidM', './assets/mediumAsteroid.png');
     }
     
     create()
     {
         // place tile sprite 
         this.starfield = this.add.tileSprite(0,0,640,480, 'newStarfield').setOrigin(0,0);
+        this.asteroidM = this.add.tileSprite(0,310,640,480, 'asteroidM').setOrigin(0,0);
 
         // green UI background 
         this.add.rectangle(0,borderUISize + borderPadding, game.config.width, borderUISize * 2,0x00FF00).setOrigin(0,0);
@@ -155,6 +157,7 @@ class Play extends Phaser.Scene
         }
 
         this.starfield.tilePositionX -=4;
+        this.asteroidM.tilePositionX -=7;
 
         if(!this.gameOver)
         {
