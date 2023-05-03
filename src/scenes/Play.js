@@ -23,6 +23,8 @@ class Play extends Phaser.Scene
     {
         // place tile sprite 
         this.starfield = this.add.tileSprite(0,0,640,480, 'newStarfield').setOrigin(0,0);
+
+        // parallax scrolling
         this.asteroidM = this.add.tileSprite(0,310,640,480, 'asteroidM').setOrigin(0,0);
 
         // green UI background 
@@ -157,6 +159,8 @@ class Play extends Phaser.Scene
         }
 
         this.starfield.tilePositionX -=4;
+
+        // parallax scrolling
         this.asteroidM.tilePositionX -=7;
 
         if(!this.gameOver)
